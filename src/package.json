@@ -4,6 +4,13 @@
   "author": "luis rosario {zapo}",
   "homepage": "http://www.luisrosar.io/projects/monte",
   "version": "0.0.3",
+  "scripts": {
+	"css": "node-sass --output ../build/style style/style.scss",
+	"build": "grunt clean --force & grunt jade & npm run css & npm run copyfiles",
+	"copyfiles": "cp -r ./img ../build & cp -r ./js ../build & cp -r ./db ../build",
+	"launch": "http-server ../build -c-1 -o",
+	"build-launch": "npm run build & npm run launch"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/aztec8/monte.git"
